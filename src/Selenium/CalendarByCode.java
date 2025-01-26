@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CalendarByCode {
+
     static WebDriver driver = new ChromeDriver();
 
     public static void main(String[] args) {

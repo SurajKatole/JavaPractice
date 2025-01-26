@@ -64,5 +64,9 @@ public class SeleniumWaits {
                .ignoring(NoSuchElementException.class);
 
        fluent.until(ExpectedConditions.visibilityOf(element));
+
+       fluentWait.withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
+
+       fluentWait.until(ExpectedConditions.visibilityOf(element));
    }
 }
