@@ -31,6 +31,7 @@ public class FindBrokenLinks {
             try
             {
                 HttpURLConnection connection = (HttpURLConnection) new URL(linkText).openConnection();
+                connection.setRequestMethod("HEAD");
                 connection.connect();
                 if(connection.getResponseCode()>=400)
                 {
