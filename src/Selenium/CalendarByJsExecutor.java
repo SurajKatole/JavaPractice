@@ -21,5 +21,6 @@ public class CalendarByJsExecutor {
         JavascriptExecutor js = ((JavascriptExecutor)driver);
         js.executeScript("arguments[0].setAttribute('value','"+dateVal+"');",element);
 
+
     }
 }
