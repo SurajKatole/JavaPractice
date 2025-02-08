@@ -1,6 +1,7 @@
 package Selenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,6 +42,9 @@ public class SeleniumWaits {
        //Expected conditions are passed that are to be satisfied within given time
        //If the conditions are not met within the time, TimeOutException is thrown
        //Timeout can be manipulated for each element
+       //WebDriverWait is subclass of FluentWait
+       //It by default has polling every 500ms
+       //It by default ignores NoSuchElementException
 
        WebElement element = driver.findElement(By.id("element"));
        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -68,5 +72,11 @@ public class SeleniumWaits {
        fluentWait.withTimeout(Duration.ofSeconds(30)).pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
 
        fluentWait.until(ExpectedConditions.visibilityOf(element));
+
+
+       //Waiting for PageLoad before interaction if page has AJAX components
+       new WebDriverWait(driver, Duration.ofSeconds(10000))
+               .until(driver -> ((JavascriptExecutor)driver)
+                       .executeScript("return document.readyState").equals("complete"));
    }
 }
