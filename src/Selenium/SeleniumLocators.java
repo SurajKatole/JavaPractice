@@ -14,6 +14,17 @@ public class SeleniumLocators {
     static WebDriver driver= new ChromeDriver();
 
     public static void main(String[] args) {
+
+        //**** Difference between findElement and findElements ****//
+
+            //findElement returns only one WebElement
+            //It throws NoSuchElementException if element is not found
+
+            //findElements returns a list of WebElements
+            //It returns an empty list if no element is found
+
+
+
 //-----//1. id  -- I
         //Unique locator -- by W3C standards
         WebElement username = driver.findElement(By.id("login-username"));
@@ -59,6 +70,10 @@ public class SeleniumLocators {
         driver.findElement(By.className("phone-no")).sendKeys("0099887766");
 
 //-----//8. tagName -- IV
+        //Issue arises as dom contains multiple duplicate tags
+        //Its not unique
+        driver.findElement(By.tagName("div"));
+
 
 
 
