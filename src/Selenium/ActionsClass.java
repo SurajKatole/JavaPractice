@@ -3,6 +3,7 @@ package Selenium;
 import InterfacesInModernJava.Action;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,6 +38,13 @@ public class ActionsClass {
         //build is used to compile all actions into one single action
         //perform executes them
         actions.moveToElement(e).clickAndHold().moveToElement(input).release().build().perform();
+
+        //can perform key operations using actions
+        //this action has no element passed
+        // hence the select all will be performed on focused screen/element
+        actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+
+
 
 
     }

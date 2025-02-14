@@ -1,5 +1,6 @@
 package InterviewProblems;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,8 +12,7 @@ public class DuplicateWordsInString {
     public static void findDuplicateWords(String str)
     {
         String[] splitStr = str.split(" ");
-        Map<String, Integer> strMap = new HashMap<String, Integer>();
-
+        Map<String, Integer> strMap = new HashMap<>();
 
 
         for(String s : splitStr)
