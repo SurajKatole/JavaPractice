@@ -19,8 +19,8 @@ public class XpathMethods {
 
         //parent
         //---Selects the parent of the current node.
-        driver.findElement(By.xpath("//button[@type='button']//parent::td"));
-        driver.findElement(By.xpath("//button[@type='button']//parent::td[@class='navbar']"));
+        driver.findElement(By.xpath("//button[@type='button']/parent::td"));
+        driver.findElement(By.xpath("//button[@type='button']/parent::td[@class='navbar']"));
 
         //preceding
         //---Selects all nodes before the current node in the document.

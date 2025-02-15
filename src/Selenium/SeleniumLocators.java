@@ -51,6 +51,15 @@ public class SeleniumLocators {
         driver.findElement(By.cssSelector("#login-username")).sendKeys("surajkatole@yahoo.com");
         driver.findElement(By.cssSelector("#next-button")).click();
 
+        // --- * - All -- eg: * { color: red; }
+        // --- tag -- eg: div { color: blue; }
+        // --- # - id -- eg: #login-username
+        // --- . - class -- eg: .button { background: green; }
+        // --- , - select multiple -- eg: h1, h2, p { color: black; }
+        // ---  (space) -- select descendants --
+
+
+
 //-----//5. linkText -- IV
         //Only applicable for links
         //All links are represented by <a> tag
